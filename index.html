@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/satos/Downloads/arigatou_dashboard_5.html -->
+<!-- saved from url=(0058)file:///C:/Users/satos/Downloads/arigatou_dashboard_6.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -105,6 +105,56 @@
     .kind-grid{grid-template-columns:1fr;}
   }
 
+  /* スマホ対応 */
+  @media(max-width:600px){
+    header { padding: 0 12px; height: auto; min-height: 56px; flex-wrap: wrap; gap: 8px; padding: 10px 12px; }
+    .logo { font-size: 14px; }
+    .header-right { gap: 6px; flex-wrap: wrap; }
+    .last-updated { display: none; }
+    .live-badge { font-size: 10px; padding: 3px 8px; }
+    .refresh-btn, .pdf-btn { font-size: 11px; padding: 5px 10px; }
+
+    .main { padding: 14px 12px; }
+    .page-title { font-size: 16px; }
+    .page-subtitle { font-size: 11px; margin-bottom: 14px; }
+
+    .kpi-grid { grid-template-columns: repeat(2,1fr); gap: 8px; margin-bottom: 14px; }
+    .kpi-card { padding: 12px 14px; border-radius: 10px; }
+    .kpi-icon { font-size: 20px; margin-bottom: 6px; }
+    .kpi-value { font-size: 22px; }
+    .kpi-label { font-size: 10px; }
+    .kpi-sub { font-size: 10px; }
+
+    .content-grid { grid-template-columns: 1fr; gap: 10px; }
+    .card { padding: 14px; border-radius: 10px; }
+    .card-title { font-size: 13px; }
+
+    .bar-label { width: 80px; font-size: 11px; }
+    .bar-fill { font-size: 10px; }
+    .bar-count { font-size: 11px; }
+
+    .kind-grid { grid-template-columns: 1fr; gap: 8px; }
+    .kind-item { padding: 10px 12px; }
+    .kind-count { font-size: 18px; }
+
+    .full-card { padding: 14px; border-radius: 10px; }
+    .card-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .filter-bar { gap: 6px; }
+    .search-input { width: 100%; }
+    .filter-btn { font-size: 10px; padding: 4px 10px; }
+
+    .card-list { grid-template-columns: 1fr; gap: 8px; margin-top: 12px; }
+    .thank-card { padding: 12px; }
+    .card-content { font-size: 12px; }
+
+    .report-card { padding: 14px; border-radius: 10px; }
+    .report-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .report-btn { width: 100%; justify-content: center; }
+    .report-type-btns { gap: 6px; }
+    .report-type-btn { font-size: 10px; padding: 4px 10px; }
+    .report-output { font-size: 12px; padding: 14px; }
+  }
+
   /* PDF印刷用スタイル */
   @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
@@ -144,7 +194,7 @@
   <div class="logo">🙏 ありがとうカード ダッシュボード</div>
   <div class="header-right">
     <div class="live-badge"><div class="live-dot"></div>LIVE</div>
-    <span class="last-updated" id="last-updated">最終更新: 09:39:52</span>
+    <span class="last-updated" id="last-updated">最終更新: 09:51:51</span>
     <button class="refresh-btn" onclick="loadData()">↻ 更新</button>
     <button class="pdf-btn" onclick="exportPDF()">📄 PDF出力</button>
   </div>
@@ -154,7 +204,7 @@
   <!-- PDF印刷時のみ表示されるヘッダー -->
   <div class="pdf-header">
     <h1>🙏 ありがとうカード 登録状況レポート</h1>
-    <p id="pdf-date">有限会社クリーニングみわ　2026年5月17日 09:36 出力</p>
+    <p id="pdf-date">有限会社クリーニングみわ</p>
   </div>
   <div class="page-title">ありがとうカード 登録状況</div>
   <div class="page-subtitle">有限会社クリーニングみわ — 全店舗集計</div>
@@ -296,16 +346,8 @@
       <button class="report-type-btn" onclick="setReportType(&#39;praise&#39;,this)">🏆 表彰候補</button>
     </div>
     <div class="report-output" id="report-output">
-      <div style="margin-bottom:12px;font-weight:700;color:#f97316">✅ プロンプトをコピーしました！</div>
-      <div style="line-height:1.9;color:#78716c">
-        <b style="color:#1c1917">あと2ステップで完成です：</b><br>
-        ① 下のボタンを押してClaude.aiを開く<br>
-        ② 画面に貼り付ける（Ctrl+V）→ Enterを押す<br>
-        ③ レポートが生成されます 🎉
-      </div>
-      <a href="https://claude.ai/" target="_blank" style="display:inline-block;margin-top:14px;background:linear-gradient(135deg,#f97316,#ec4899);color:white;padding:10px 24px;border-radius:20px;font-weight:700;font-size:13px;text-decoration:none">
-        Claude.ai を開く →
-      </a></div>
+      <div class="report-placeholder">「レポートを作成」ボタンを押すと、Claudeがありがとうカードの内容を分析してレポートを作成します。</div>
+    </div>
   </div>
 </div>
 
