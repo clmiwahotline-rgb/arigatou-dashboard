@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/satos/Downloads/arigatou_dashboard_6.html -->
+<!-- saved from url=(0058)file:///C:/Users/satos/Downloads/arigatou_dashboard_7.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,8 @@
   body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #fdf8f0; color: #1c1917; font-size: 13px; }
 
   header { background: #fff; border-bottom: 2px solid #f0e0c8; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(249,115,22,0.08); }
-  .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px; color: #f97316; }
-  .header-right { display: flex; align-items: center; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px; color: #f97316; white-space: nowrap; }
+  .header-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
   .live-badge { display: flex; align-items: center; gap: 5px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #10b981; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
   .live-dot { width: 6px; height: 6px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:0.3;} }
@@ -108,7 +108,7 @@
   /* スマホ対応 */
   @media(max-width:600px){
     header { padding: 0 12px; height: auto; min-height: 56px; flex-wrap: wrap; gap: 8px; padding: 10px 12px; }
-    .logo { font-size: 14px; }
+    .logo { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
     .header-right { gap: 6px; flex-wrap: wrap; }
     .last-updated { display: none; }
     .live-badge { font-size: 10px; padding: 3px 8px; }
@@ -143,7 +143,7 @@
     .search-input { width: 100%; }
     .filter-btn { font-size: 10px; padding: 4px 10px; }
 
-    .card-list { grid-template-columns: 1fr; gap: 8px; margin-top: 12px; }
+    .card-list { grid-template-columns: 1fr !important; gap: 8px; margin-top: 12px; }
     .thank-card { padding: 12px; }
     .card-content { font-size: 12px; }
 
@@ -191,10 +191,10 @@
 <body>
 
 <header>
-  <div class="logo">🙏 ありがとうカード ダッシュボード</div>
+  <div class="logo">🙏 ありがとうカード</div>
   <div class="header-right">
     <div class="live-badge"><div class="live-dot"></div>LIVE</div>
-    <span class="last-updated" id="last-updated">最終更新: 09:51:51</span>
+    <span class="last-updated" id="last-updated">最終更新: 09:56:44</span>
     <button class="refresh-btn" onclick="loadData()">↻ 更新</button>
     <button class="pdf-btn" onclick="exportPDF()">📄 PDF出力</button>
   </div>
